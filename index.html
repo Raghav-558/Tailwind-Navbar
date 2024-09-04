@@ -11,27 +11,47 @@
 
 <body>
     <section class="min-h-screen flex items-center bg-[#1E71FF] flex-col">
-        <nav class="w-[85%] flex items-center justify-between px-6 py-3">
+        <nav class="w-full flex items-center justify-between px-6 py-3">
             <div>
                 <a href="#">
                     <h2 class="font-semibold text-white text-[26px] font-['poppins']">chat<span
                             class="font-[275]">app</span></h2>
                 </a>
             </div>
-            <ul class="flex gap-6 items-center md:relative fixed max-md:w-full z-10 max-md:translate-x-full transition-all duration-300 ease-linear left-0 top-0 max-md:flex-col max-md:justify-center max-md:items-center">
+            <ul id="mobile_nav"
+                class="flex gap-6 items-center lg:relative fixed max-lg:w-full z-10 max-lg:translate-x-full transition-all duration-300 ease-linear left-0 top-0 max-lg:flex-col max-lg:justify-center max-lg:items-center">
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Product</a></li>
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Services</a></li>
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Contact</a></li>
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Log In</a></li>
-                <li><button class="px-5 py-2 rounded-full border border-sky-500 font-['Roboto'] font-medium text-sm text-white hover:bg-yellow-400 hover:text-black transition-all duration-300">Try It Free</button></li>
+                <li><button
+                        class="px-5 py-2 rounded-full border border-sky-500 font-['Roboto'] font-medium text-sm text-white hover:bg-yellow-400 hover:text-black transition-all duration-300">Try
+                        It Free</button></li>
             </ul>
-            <div class="relative z-20 flex gap-x-4">
-                <div class="re">
-                    <div class=""></div>
+            <div class="relative z-20 flex gap-x-4 lg:hidden">
+                <div class="relative size-8 rounded-full " id="toggle_button">
+                    <div class="absolute h-full w-full bg-transparent border transition-all duration-300 left-0 show_nav"></div>
+                    <div
+                        class="absolute h-full w-full bg-red-500 transition-all duration-300 left-0 close_nav opacity-0">
+                    </div>
                 </div>
             </div>
         </nav>
     </section>
+    <script>
+        const nav = document.getElementById("mobile_nav")
+        const toggleButton = document.getElementById("toggle_button")
+        const toggleButtonShowNav = document.getElementById("toggle_button .show_nav")
+        const toggleButtonCloseNav = document.getElementById("toggle_button .close_nav")
+        toggleButton.addEventListener("Click",
+            function () {
+                nav.ClassList.toggle("max-lg:translate-x-full")
+                toggleButtonShowNav.ClassList.toggle("opacity-0")
+                toggleButtonCloseNav.ClassList.toggle("opacity-0")
+                nav.ClassList.toggle("max-lg:translate-x-full")
+            }
+        )
+    </script>
 </body>
 
 </html>
