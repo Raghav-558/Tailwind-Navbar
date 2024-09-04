@@ -18,8 +18,8 @@
                             class="font-[275]">app</span></h2>
                 </a>
             </div>
-            <ul id="mobile_nav"
-                class="flex gap-6 items-center lg:relative fixed max-lg:w-full z-10 max-lg:translate-x-full transition-all duration-300 ease-linear left-0 top-0 max-lg:flex-col max-lg:justify-center max-lg:items-center">
+            <ul id="mobile_navbar"
+                class="flex gap-6 items-center lg:relative fixed max-lg:w-full  max-lg:translate-x-full  left-0 top-0 max-lg:flex-col max-lg:justify-center max-lg:items-center">
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Product</a></li>
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Services</a></li>
                 <li><a href="#" class="font-medium text-white text-sm font-['Roboto']">Contact</a></li>
@@ -39,16 +39,17 @@
         </nav>
     </section>
     <script>
-        const nav = document.getElementById("mobile_nav")
+        const nav = document.getElementById("mobile_navbar")
         const toggleButton = document.getElementById("toggle_button")
-        const toggleButtonShowNav = document.getElementById("toggle_button .show_nav")
-        const toggleButtonCloseNav = document.getElementById("toggle_button .close_nav")
-        toggleButton.addEventListener("Click",
+        const toggleButtonShowNav = document.querySelector("#toggle_button .show_nav")
+        const toggleButtonCloseNav = document.querySelector("#toggle_button .close_nav")
+        toggleButton.addEventListener("click",
             function () {
-                nav.ClassList.toggle("max-lg:translate-x-full")
-                toggleButtonShowNav.ClassList.toggle("opacity-0")
-                toggleButtonCloseNav.ClassList.toggle("opacity-0")
-                nav.ClassList.toggle("max-lg:translate-x-full")
+                nav.classList.toggle("max-lg:translate-x-full")
+                toggleButtonShowNav.classList.toggle("opacity-0")
+                toggleButtonCloseNav.classList.toggle("opacity-0")
+                nav.classList.toggle("max-lg:translate-x-full")
+                console.log("nav")
             }
         )
     </script>
